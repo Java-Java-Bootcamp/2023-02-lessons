@@ -14,8 +14,9 @@ public class PersonBuilder {
 	}
 
 	public static void main(String[] args) {
-		final int x = 456;
-		final int y = 789;
-		System.out.println(x * y);
+		int id = 23;
+		String name = "John";
+		Person person = null;
+		person = buildPerson(id, name);
 	}
 }
