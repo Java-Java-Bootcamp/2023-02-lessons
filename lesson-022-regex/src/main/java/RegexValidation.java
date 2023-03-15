@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.regex.Pattern;
 
-public class NumbersValidation {
+public class RegexValidation {
     // +7-123-456-78-90
     // +7 123 456 78 90
 //    private static final Pattern pattern = Pattern.compile("\\+\\d{1,3}[- ]\\d{3}[- ]\\d{3}[- ]\\d{2}[- ]\\d{2}");
@@ -10,20 +10,20 @@ public class NumbersValidation {
     // игнорируем throws IOException
     public static void main(String[] args) throws IOException {
         var consoleReader = createConsoleReader();
-        System.out.println("Введите номер телефона:");
+        System.out.println("Input phone number:");
         String input = consoleReader.readLine();
 
         var matcher = pattern.matcher(input);
         if (matcher.matches()) {
-            System.out.println("Телефон корректный");
+            System.out.println("Phone number is correct");
             String matchedGroup = matcher.group(1);
             String matchedGroup2 = matcher.group(2);
-            System.out.println("Совпавшая группа 1: " + matchedGroup);
-            System.out.println("Совпавшая группа 2: " + matchedGroup2);
-            System.out.println("Совпавшая группа 2: " + matcher.group(3));
+            System.out.println("Matched group 1: " + matchedGroup);
+            System.out.println("Matched group 2: " + matchedGroup2);
+            System.out.println("Matched group 2: " + matcher.group(3));
             // some logic here
         } else {
-            System.out.println("Телефон некорректный. Формат: +7-123-456-78-90");
+            System.out.println("Phone number is incorrect. Please follow the format: +7-123-456-78-90");
         }
     }
 
