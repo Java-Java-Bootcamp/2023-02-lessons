@@ -1,3 +1,5 @@
+package org.example;
+
 public class TestElement {
     private String text;
     private String[] answers;
