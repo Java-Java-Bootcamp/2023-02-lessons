@@ -6,15 +6,18 @@ public class Test {
     private int correctCount;
     private int wrongCount;
 
-    public Test(TestElement[] blocks) {
+    private UserOutput userOutput;
+
+    public Test(UserOutput userOutput, TestElement[] blocks) {
         this.blocks = blocks;
+        this.userOutput = userOutput;
     }
 
     public void runTest() {
         for (TestElement block : blocks) {
             if(block.ask()) {
                 correctCount++;
-                System.out.println("Right!");
+                userOutput.print("Right!");
             } else {
                 wrongCount++;
                 System.out.println("Wrong!");
