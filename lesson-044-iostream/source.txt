@@ -1,0 +1,28 @@
+Занятие «I/O Streams. File I/O»
+
+Цели занятия
+познакомиться с возможностями IO в Java.
+
+Краткое содержание
+InputSteam и OutputSteam;
+Reader и Writer;
+Apache библиотеки FileUtils, IOUtils.
+
+https://docs.google.com/presentation/d/12P9BsgjTxWcFTktN9880j05B8lSatwmkpWAYppVOAAM/edit#slide=id.gdf29b9fb24_0_29
+https://docs.google.com/presentation/d/1fxPk4KQq_LHaPn38APHkZkV8uD0YDz52/edit#slide=id.p4
+
+https://docs.oracle.com/javase/tutorial/essential/io/bytestreams.html
+
+FileInputStream and FileOutputStream
+Пример на копирование
+
+BufferedInputStream
+BufferedOutputStream
+
+DataInputStream / DataOutputStream
+
+Сериализация?
+
+
+Reader / Writer
+Scanner
