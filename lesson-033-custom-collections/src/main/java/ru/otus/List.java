@@ -1,6 +1,6 @@
 package ru.otus;
 
-public interface List extends java.lang.Iterable {
+public interface List {
     boolean add(Object elem);
 
     Object get(int idx);
