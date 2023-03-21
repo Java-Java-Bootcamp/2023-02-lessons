@@ -1,6 +1,6 @@
 package ru.otus;
 
-public interface Iterator extends java.util.Iterator<Object> {
+public interface Iterator {
     boolean hasNext();
 
     Object next();

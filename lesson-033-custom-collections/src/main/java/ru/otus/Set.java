@@ -1,6 +1,6 @@
 package ru.otus;
 
-public interface Set {
+public interface Set extends Iterable {
     boolean add(Object elem);
 
     boolean contains(Object elem);

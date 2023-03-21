@@ -63,4 +63,26 @@ public class ArrayList implements List {
 
         return false;
     }
+
+    @Override
+    public Iterator iterator() {
+        return new ArrayListIterator();
+    }
+
+    private class ArrayListIterator implements Iterator {
+        private int currIdx = 0;
+
+        @Override
+        public boolean hasNext() {
+            return container[currIdx] != null;
+        }
+
+        @Override
+        public Object next() {
+            if (!hasNext()) {
+                throw new IllegalArgumentException("There is no more elements in a list");
+            }
+            return container[currIdx++];
+        }
+    }
 }

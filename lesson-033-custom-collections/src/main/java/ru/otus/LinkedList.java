@@ -36,6 +36,11 @@ public class LinkedList implements List {
         return false;
     }
 
+    @Override
+    public Iterator iterator() {
+        return null;
+    }
+
     private static class Container {
         private final Object value;
         private Container nextContainer;
