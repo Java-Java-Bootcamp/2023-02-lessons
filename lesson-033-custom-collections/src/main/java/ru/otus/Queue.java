@@ -1,11 +1,7 @@
 package ru.otus;
 
-public interface Queue {
+public interface Queue extends Iterable{
     boolean add(Object elem);
 
-    Object remove();
-
     Object poll(); //work with tail
-
-    Object peek(); //work with tail
 }
