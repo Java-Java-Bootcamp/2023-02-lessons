@@ -1,4 +1,5 @@
 import ru.otus.ArrayList;
+import ru.otus.Iterator;
 import ru.otus.LinkedList;
 import ru.otus.List;
 
@@ -12,6 +13,16 @@ public class Main {
 
         System.out.println(arrayList.get(3));
         System.out.println(linkedList.get(3));
+
+        for (Object item : arrayList) {
+            // java iterable + iterator behind the scene
+        }
+
+        Iterator iterator = arrayList.iterator();
+        while (iterator.hasNext()) {
+            Object item = iterator.next();
+            // some logic on item here
+        }
     }
 
     private static void populateList(List myList) {

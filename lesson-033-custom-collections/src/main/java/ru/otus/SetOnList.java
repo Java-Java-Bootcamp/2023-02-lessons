@@ -28,6 +28,6 @@ public class SetOnList implements Set {
 
     @Override
     public Iterator iterator() {
-        return null;
+        return container.iterator();
     }
 }
