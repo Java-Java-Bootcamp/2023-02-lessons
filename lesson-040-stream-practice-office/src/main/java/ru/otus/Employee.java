@@ -21,12 +21,17 @@ public class Employee {
 
     private String city;
 
-    public Employee(String name, String surname) {
+    public Employee(String name, String surname, int age) {
         this.name = name;
         this.surname = surname;
+        this.age = age;
     }
 
     public String toString() {
-        return name + " " + surname;
+        return "{ " + name + " " + surname + ": " + age + " years}";
+    }
+
+    public int getAge() {
+        return age;
     }
 }
