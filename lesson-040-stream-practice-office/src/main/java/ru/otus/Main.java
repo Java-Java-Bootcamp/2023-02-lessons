@@ -1,9 +1,6 @@
 package ru.otus;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Predicate;
 
 public class Main {
@@ -17,6 +14,8 @@ public class Main {
 
         List<Department> departments = createDepartments();
         System.out.println(departments);
+
+        taskTwo(departments);
 
        /* Set<Employee> employees = departments.get(0).getEmployees();
         System.out.println(departments.get(0).getEmployees());
@@ -44,6 +43,27 @@ public class Main {
                 new HashSet<>(createEmployees("Dep C")));
 
         return List.of(a, b, c);
+    }
+
+    /**
+     * Вывести в консоль название департамента и его руководителя;
+     * Отсортировать департаменты по количеству сотрудников;
+     */
+    private static void taskTwo(List<Department> departments) {
+        List<String> depsHeadNames = departments.stream()
+                .map(
+                        dep -> dep.getName() + ", head: " + dep.getHead().getName()
+                )
+                .toList();
+
+        System.out.println(depsHeadNames);
+
+        System.out.println("Sorted by employees number");
+        List<Department> sortedDepartments = departments.stream()
+                .sorted((dep1, dep2) -> dep1.getEmployees().size() - dep2.getEmployees().size())
+                .toList();
+
+        System.out.println(sortedDepartments);
     }
 
     /*
@@ -81,7 +101,9 @@ public class Main {
         System.out.println("First employee > 25 years old: " + employeesOlderThan25.get(0));*/
 
         Employee firstOlderThan25 = employees.stream()
-                .filter(employee -> employee.getAge() > 25)
+                .filter(
+                        employee -> employee.getAge() > 25
+                )
                 .sorted(
                         (em1, em2) -> em1.getAge() - em2.getAge()
                 ).findFirst().get();
@@ -92,13 +114,25 @@ public class Main {
 
     private static List<Employee> createEmployees(String depName) {
         Random random = new Random();
-        List<Employee> employees = List.of(
+        List<Employee> employees = new ArrayList<>(List.of(
                 new Employee("A" + depName + "name", "A surname", random.nextInt(18, 35)),
-                new Employee("B" + depName + "name", "B surname", random.nextInt(18, 50)),
-                new Employee("C" + depName + "name", "C surname", random.nextInt(18, 40)),
-                new Employee("D" + depName + "name", "D surname", random.nextInt(18, 60)),
-                new Employee("E" + depName + "name", "E surname", random.nextInt(18, 120))
-        );
+                new Employee("B" + depName + "name", "B surname", random.nextInt(18, 50))
+        ));
+        if (random.nextBoolean()) {
+            employees.add(
+                    new Employee("C" + depName + "name", "C surname", random.nextInt(18, 40))
+                    );
+        }
+        if (random.nextBoolean()) {
+            employees.add(
+                    new Employee("D" + depName + "name", "D surname", random.nextInt(18, 60))
+            );
+        }
+        if (random.nextBoolean()) {
+            employees.add(
+                    new Employee("E" + depName + "name", "E surname", random.nextInt(18, 120))
+            );
+        }
         return employees;
     }
 }

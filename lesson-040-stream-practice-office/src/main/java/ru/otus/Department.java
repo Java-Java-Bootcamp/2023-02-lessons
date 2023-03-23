@@ -42,6 +42,6 @@ public class Department {
     }
 
     public String toString() {
-        return name + ", head: " + head.getName();
+        return name + ", head: " + head.getName() + ", size: " + employees.size();
     }
 }
