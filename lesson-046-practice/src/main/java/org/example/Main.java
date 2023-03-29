@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.command.AddCommand;
 import org.example.command.Command;
+import org.example.command.FindByCityCommand;
 import org.example.command.GetCommand;
 
 import java.util.Arrays;
@@ -10,12 +11,14 @@ import java.util.Scanner;
 
 public class Main {
     private final static TaskManger TASK_MANGER = new TaskManger();
-    private final static List<Command> COMMANDS = Arrays.asList(new AddCommand(TASK_MANGER), new GetCommand(TASK_MANGER));
+    private final static List<Command> COMMANDS = Arrays.asList(
+            new AddCommand(TASK_MANGER),
+            new GetCommand(TASK_MANGER),
+            new FindByCityCommand(TASK_MANGER));
 
     public static void main(String[] args) {
         String command = "";
         Scanner scanner = new Scanner(System.in);
-        TaskManger manger = new TaskManger();
         while(!"EXIT".equals(command)) {
             showCommands();
             String commandName = scanner.nextLine();
