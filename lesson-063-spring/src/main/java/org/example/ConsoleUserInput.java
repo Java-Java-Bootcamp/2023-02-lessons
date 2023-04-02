@@ -1,7 +1,9 @@
 package org.example;
 
 import java.util.Scanner;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ConsoleUserInput implements UserInput{
     public int read(int minValue, int maxValue) {
         Scanner scanner = new Scanner(System.in);

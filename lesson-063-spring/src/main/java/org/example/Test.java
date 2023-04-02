@@ -7,22 +7,33 @@ public class Test {
     private int wrongCount;
 
     private UserOutput userOutput;
+    private final UserInput userInput;
 
-    public Test(UserOutput userOutput, TestElement[] blocks) {
+    public Test(UserOutput userOutput, UserInput userInput, TestElement[] blocks) {
         this.blocks = blocks;
         this.userOutput = userOutput;
+        this.userInput = userInput;
+    }
+
+    private boolean ask(TestElement element) {
+        userOutput.print(element.getText());
+        for (int i = 0; i < element.getAnswers().length; i++) {
+            userOutput.print(element.getAnswers()[i]);
+        }
+        int userAnswer = userInput.read(1, element.getAnswers().length);
+        return userAnswer == element.getRightAnswerIndex();
     }
 
     public void runTest() {
         for (TestElement block : blocks) {
-            if(block.ask()) {
+            if(ask(block)) {
                 correctCount++;
                 userOutput.print("Right!");
             } else {
                 wrongCount++;
-                System.out.println("Wrong!");
+                userOutput.print("Wrong!");
             }
         }
-        System.out.println("Result: correct - " + correctCount + " wrong - " + wrongCount);
+        userOutput.print("Result: correct - " + correctCount + " wrong - " + wrongCount);
     }
 }
