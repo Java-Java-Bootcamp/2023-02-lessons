@@ -1,5 +1,8 @@
 package org.example;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class Test {
     private TestElement[] blocks;
 

@@ -9,12 +9,7 @@ public class Application {
     public static void main(String[] args) {
         var context = new AnnotationConfigApplicationContext(Application.class);
 
-        var userInput = context.getBean(UserInput.class);
-        var userOutput = context.getBean(UserOutput.class);
-
-        var testElements = context.getBean(TestElements.class);
-
-        Test test = new Test(userOutput, userInput, testElements);
+        var test = context.getBean(Test.class);
 
         test.runTest();
     }
