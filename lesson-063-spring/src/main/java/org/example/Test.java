@@ -9,8 +9,8 @@ public class Test {
     private UserOutput userOutput;
     private final UserInput userInput;
 
-    public Test(UserOutput userOutput, UserInput userInput, TestElement[] blocks) {
-        this.blocks = blocks;
+    public Test(UserOutput userOutput, UserInput userInput, TestElements blocks) {
+        this.blocks = blocks.getElements();
         this.userOutput = userOutput;
         this.userInput = userInput;
     }
