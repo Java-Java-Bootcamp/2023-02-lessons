@@ -1,10 +1,11 @@
 package org.example;
 
+import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service
 public class Test {
-    private TestElement[] blocks;
+    private List<TestElement> blocks;
 
     private int correctCount;
     private int wrongCount;
