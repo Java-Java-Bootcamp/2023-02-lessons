@@ -5,12 +5,15 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
+@Service
 public class TestElements {
 
     private final List<TestElement> elements = new ArrayList<>();
 
-    public TestElements(String fileName) throws IOException {
+    public TestElements(@Value("${input.file}") String fileName) throws IOException {
         // читаем вопросы и ответы из файла
         try (var file = new BufferedReader(new FileReader(fileName))) {
             while (true) {
