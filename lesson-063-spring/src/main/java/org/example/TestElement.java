@@ -1,11 +1,13 @@
 package org.example;
 
+import java.util.List;
+
 public class TestElement {
     private String text;
-    private String[] answers;
+    private List<String> answers;
     private int rightAnswerIndex;
 
-    public TestElement(String text, String[] answers, int rightAnswerIndex) {
+    public TestElement(String text, List<String> answers, int rightAnswerIndex) {
         this.text = text;
         this.answers = answers;
         this.rightAnswerIndex = rightAnswerIndex;
@@ -15,7 +17,7 @@ public class TestElement {
         return text;
     }
 
-    public String[] getAnswers() {
+    public List<String> getAnswers() {
         return answers;
     }
 

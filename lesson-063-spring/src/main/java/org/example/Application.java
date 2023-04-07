@@ -1,5 +1,6 @@
 package org.example;
 
+import java.io.IOException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -15,11 +16,7 @@ public class Application {
     }
 
     @Bean
-    public TestElements testElements() {
-        TestElement testElement = new TestElement("1+2", new String[]{"1", "2", "3", "4"}, 3);
-        TestElement testElement2 = new TestElement("1+2", new String[]{"1", "2", "4"}, 3);
-        TestElement testElement3 = new TestElement("1+4", new String[]{"3", "4"}, 3);
-
-        return new TestElements(new TestElement[]{testElement, testElement2, testElement3});
+    public TestElements testElements() throws IOException {
+        return new TestElements("data.txt");
     }
 }

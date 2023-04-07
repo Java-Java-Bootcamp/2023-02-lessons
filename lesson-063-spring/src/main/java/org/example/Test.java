@@ -1,10 +1,11 @@
 package org.example;
 
+import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service
 public class Test {
-    private TestElement[] blocks;
+    private List<TestElement> blocks;
 
     private int correctCount;
     private int wrongCount;
@@ -20,10 +21,10 @@ public class Test {
 
     private boolean ask(TestElement element) {
         userOutput.print(element.getText());
-        for (int i = 0; i < element.getAnswers().length; i++) {
-            userOutput.print(element.getAnswers()[i]);
+        for (int i = 0; i < element.getAnswers().size(); i++) {
+            userOutput.print(element.getAnswers().get(i));
         }
-        int userAnswer = userInput.read(1, element.getAnswers().length);
+        int userAnswer = userInput.read(1, element.getAnswers().size());
         return userAnswer == element.getRightAnswerIndex();
     }
 
