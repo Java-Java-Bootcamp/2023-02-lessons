@@ -1,0 +1,30 @@
+#springdoc:
+#  swagger-ui.path: /swagger-ui.html
+
+
+
+#logging:
+#  level:
+#    root: info
+
+
+#server:
+#  port: 8090
+
+
+client-creator:
+  enabled: true
+  clients:
+    - name: Stepa
+      secondName: Stepanov
+      age: 22
+    - name: Kolya
+      secondName: Nikolaev
+      age: 33
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
