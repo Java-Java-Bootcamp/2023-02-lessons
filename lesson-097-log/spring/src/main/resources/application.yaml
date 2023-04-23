@@ -1,0 +1,12 @@
+logging:
+  level:
+    root: info
+  file:
+    name: "app.log"
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
